@@ -10,7 +10,7 @@ Die Abfrage kann auch dem JSON Export aus dem Repo entnommen werden.
 
 ```bash
 # Repo klonen
-cd Repo
+cd MS_Microservices/M1
 docker build -t ms_image .
 docker run -d --name ms_dishes -p 80:80 ms_image
 ```
