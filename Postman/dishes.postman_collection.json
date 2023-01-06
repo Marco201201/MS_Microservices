@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "73d49733-97b1-46c9-b1cc-4b1ca1722b16",
+		"name": "dishes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:80/dishes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"    <style type=\"text/css\">\r",
+							"        .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"        .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"        .tftable tr {background-color:#ffffff;}\r",
+							"        .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"        .tftable tr:hover {background-color:#e0ffff;}\r",
+							"    </style>\r",
+							"    \r",
+							"    <table class=\"tftable\" border=\"1\">\r",
+							"        <tr>\r",
+							"            <th>Gericht</th>\r",
+							"            <th>Herkunft</th>\r",
+							"        </tr>\r",
+							"        \r",
+							"        {{#each response.dishes}}\r",
+							"            <tr>\r",
+							"                <td>{{name}}</td>\r",
+							"                <td>{{cuisine}}</td>\r",
+							"            </tr>\r",
+							"        {{/each}}\r",
+							"    </table>\r",
+							"`;\r",
+							"\r",
+							"pm.visualizer.set(template, {\r",
+							"    response: pm.response.json()\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:80/dishes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "80",
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
